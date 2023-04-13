@@ -303,8 +303,8 @@ export const experience: TimelineItem[] = [
     title: 'Développeur informatique',
     content: (
       <p>
-         
-        
+
+
       </p>
     ),
   },
@@ -370,6 +370,7 @@ export const contact: ContactSection = {
  */
 export const socialLinks: Social[] = [
   { label: 'Github', Icon: GithubIcon, href: 'https://github.com/mikexxi' },
+  { label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/21632474/mikexxi' },
   { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/mickael-djegherif/' },
   { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/' },
   { label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx' },
