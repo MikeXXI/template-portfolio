@@ -2,14 +2,14 @@ import classNames from 'classnames';
 import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 import {isApple, isMobile} from '../../config';
-import {SectionId, testimonial} from '../../data/data';
-import {Testimonial} from '../../data/dataDef';
+import {SectionId, temoignage} from '../../data/data';
+import {Temoignage} from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
 
-const Testimonials: FC = memo(() => {
+const Temoignages: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [scrollValue, setScrollValue] = useState(0);
   const [parallaxEnabled, setParallaxEnabled] = useState(false);
@@ -19,7 +19,7 @@ const Testimonials: FC = memo(() => {
 
   const {width} = useWindow();
 
-  const {imageSrc, testimonials} = testimonial;
+  const {imageSrc, temoignages} = temoignage;
 
   const resolveSrc = useMemo(() => {
     if (!imageSrc) return undefined;
@@ -42,7 +42,7 @@ const Testimonials: FC = memo(() => {
     }
   }, [itemWidth, scrollValue]);
 
-  const setTestimonial = useCallback(
+  const setTemoignage = useCallback(
     (index: number) => () => {
       if (scrollContainer !== null && scrollContainer.current !== null) {
         scrollContainer.current.scrollLeft = itemWidth.current * index;
@@ -51,12 +51,12 @@ const Testimonials: FC = memo(() => {
     [],
   );
   const next = useCallback(() => {
-    if (activeIndex + 1 === testimonials.length) {
-      setTestimonial(0)();
+    if (activeIndex + 1 === temoignages.length) {
+      setTemoignage(0)();
     } else {
-      setTestimonial(activeIndex + 1)();
+      setTemoignage(activeIndex + 1)();
     }
-  }, [activeIndex, setTestimonial, testimonials.length]);
+  }, [activeIndex, setTemoignage, temoignages.length]);
 
   const handleScroll = useCallback<UIEventHandler<HTMLDivElement>>(event => {
     setScrollValue(event.currentTarget.scrollLeft);
@@ -64,13 +64,13 @@ const Testimonials: FC = memo(() => {
 
   useInterval(next, 10000);
 
-  // If no testimonials, don't render the section
-  if (!testimonials.length) {
+  // If no temoignages, don't render the section
+  if (!temoignages.length) {
     return null;
   }
 
   return (
-    <Section noPadding sectionId={SectionId.Testimonials}>
+    <Section noPadding sectionId={SectionId.Temoignages}>
       <div
         className={classNames(
           'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
@@ -84,15 +84,15 @@ const Testimonials: FC = memo(() => {
               className="no-scrollbar flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
               onScroll={handleScroll}
               ref={scrollContainer}>
-              {testimonials.map((testimonial, index) => {
+              {temoignages.map((temoignage, index) => {
                 const isActive = index === activeIndex;
                 return (
-                  <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
+                  <Temoignage isActive={isActive} key={`${temoignage.name}-${index}`} temoignage={temoignage} />
                 );
               })}
             </div>
             <div className="flex gap-x-4">
-              {[...Array(testimonials.length)].map((_, index) => {
+              {[...Array(temoignages.length)].map((_, index) => {
                 const isActive = index === activeIndex;
                 return (
                   <button
@@ -102,7 +102,7 @@ const Testimonials: FC = memo(() => {
                     )}
                     disabled={isActive}
                     key={`select-button-${index}`}
-                    onClick={setTestimonial(index)}></button>
+                    onClick={setTemoignage(index)}></button>
                 );
               })}
             </div>
@@ -113,8 +113,8 @@ const Testimonials: FC = memo(() => {
   );
 });
 
-const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
-  ({testimonial: {text, name, image}, isActive}) => (
+const Temoignage: FC<{temoignage: Temoignage; isActive: boolean}> = memo(
+  ({temoignage: {text, name, image}, isActive}) => (
     <div
       className={classNames(
         'flex w-full shrink-0 snap-start snap-always flex-col items-start gap-y-4 p-2 transition-opacity duration-1000 sm:flex-row sm:gap-x-6',
@@ -136,4 +136,4 @@ const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
   ),
 );
 
-export default Testimonials;
+export default Temoignages;
