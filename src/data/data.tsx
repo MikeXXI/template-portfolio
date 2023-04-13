@@ -216,6 +216,55 @@ export const portfolioItems: PortfolioItem[] = [
     url: 'https://mikexxi.me',
     image: porfolioImage3,
   },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage4,
+  },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage5,
+  },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage6,
+  },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage7,
+  },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage8,
+  },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage9,
+  },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage10,
+  },
+  {
+    title: 'Mario Portfolio',
+    description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
+    url: 'https://mikexxi.me',
+    image: porfolioImage11,
+  },
+
 ];
 
 /**
