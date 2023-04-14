@@ -26,7 +26,7 @@ import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
-import temoignageImage from '../images/testimonial.webp';
+import citationImage from '../images/testimonial.webp';
 import {
   About,
   ContactSection,
@@ -36,7 +36,7 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
-  TemoignageSection,
+  CitationSection,
   TimelineItem,
 } from './dataDef';
 
@@ -59,7 +59,7 @@ export const SectionId = {
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
-  Temoignages: 'temoignages',
+  Citations: 'citations',
 } as const;
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
@@ -75,7 +75,7 @@ export const heroData: Hero = {
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         Je suis actuellement Mentor Informatique à <strong className="text-stone-100">Sophia Ynov Campus</strong>, et suis
         le cursus de bachelor 3 Informatique option <strong className="text-stone-100">développement</strong>.
-        <p>Passionné et déterminé. Après une expérience de développeur informatique, j’ai choisi l'alternance pour approfondir mes compétences dans le domaine.</p>
+        <p>Après une expérience de développeur informatique, j'ai constaté mes lacunes et mon envie de développer ce coté mangégérial. J’ai donc choisi de reprendre l'alternance.</p>
         <p>Toujours à la recherche de nouvelles technologies et de nouveaux projets pour nourrir ma soif de savoir.
           J’aime particulièrement travailler sur des projets <strong className="text-stone-100">complexes</strong> et me challengers pour sans cesse me <strong className="text-stone-100">dépasser</strong> et me <strong className="text-stone-100">perfectionner</strong>.</p>
 
@@ -91,16 +91,16 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '../data/resume.pdf',
-      text: 'Resume',
-      primary: true,
-      Icon: DownloadIcon,
-    },
-    {
       href: `#${SectionId.Contact}`,
       text: 'Contact',
       primary: false,
     },
+    {
+      href: `../data/resume.pdf`,
+      text: 'Telecharger mon CV',
+      primary: true,      
+      Icon: DownloadIcon,
+    }
   ],
 };
 
@@ -213,7 +213,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Mario Portfolio',
     description: 'Voici une ébauche d\'un projet personnel réalisé en JS vanilla, dans le but de crée un mini jeux à travers un portfolio .',
-    url: 'https://mikexxi.me',
+    url: 'https://js-portfolio-mikexxi.vercel.app/',
     image: porfolioImage3,
   },
   {
@@ -272,9 +272,9 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: '2017',
-    location: 'UFIP',
-    title: 'Brevet de technicien supérieur - Services informatiques aux organisations',
+    date: '2023',
+    location: 'Sophia Ynov Campus',
+    title: 'Mastère 1 - Expert en Développement Logiciel & IoT ',
     content: <p></p>,
   },
   {
@@ -283,6 +283,13 @@ export const education: TimelineItem[] = [
     title: 'Bachelor 3 - Développement',
     content: <p></p>,
   },
+  {
+    date: '2017',
+    location: 'UFIP',
+    title: 'Brevet de technicien supérieur - Services informatiques aux organisations',
+    content: <p></p>,
+  },
+  
 ];
 
 export const experience: TimelineItem[] = [
@@ -312,25 +319,25 @@ export const experience: TimelineItem[] = [
 ];
 
 /**
- * Temoignage section
+ * Citation section
  */
-export const temoignage: TemoignageSection = {
-  imageSrc: temoignageImage,
-  temoignages: [
+export const citation: CitationSection = {
+  imageSrc: citationImage,
+  citations: [
     {
-      name: 'John Doe',
-      text: 'Mickaël est un développeur très compétent, il a su mener à bien le projet de création d\'un site web pour mon entreprise. Il a su répondre à toutes mes attentes et à toutes mes questions. Je le recommande vivement !',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+      name: 'Socrate',
+      text: 'La chute n’est pas un échec. L’échec, c’est de rester là où on est tombé',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Socrate_du_Louvre.jpg',
     },
     {
-      name: 'Jane Doe',
-      text: 'Merci Mickaël pour ton travail sur le site web de mon entreprise. Tu as su répondre à toutes mes attentes et à toutes mes questions. Je te recommande vivement !',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
+      name: 'Alice Parizeau',
+      text: 'Il faut critiquer, il faut constamment tout remettre en cause. Cela permet de rester jeune et de progresser.',
+      image: 'https://img.huffingtonpost.com/asset/5ccd936823000065019b11c7.jpeg?ops=scalefit_720_noupscale&format=webp',
     },
     {
-      name: 'Quelqu\'un d\'autre',
-      text: 'Je suis fier de recommander Mickaël en tant que développeur compétent et talentueux. Pendant son temps chez nous, il a été responsable de plusieurs projets de développement logiciel, qui ont tous été réalisés avec succès.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      name: 'Boris Cyrulnik',
+      text: 'La résilience, c\'est l\'art de naviguer dans les torrents.',
+      image: 'https://images.ladepeche.fr/api/v1/images/view/5c33c7408fe56f1afb3e4e53/full/image.jpg',
     },
   ],
 };
